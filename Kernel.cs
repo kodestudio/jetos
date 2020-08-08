@@ -24,7 +24,7 @@ namespace JetOS
             Console.Write("JetOS>");
             var input = Console.ReadLine();
             // Call App Class
-            App CallApp = new App();
+            BasicApp CallBasicApp = new BasicApp();
             // Connect to system cmd
             
             SystemCmd CMD = new SystemCmd();
@@ -41,16 +41,19 @@ namespace JetOS
                     BeforeRun();
                     break;
                 case "plus":
-                    CallApp.Plus();
+                    CallBasicApp.Plus();
                     break;
                 case "multiply":
-                    CallApp.Multiply();
+                    CallBasicApp.Multiply();
                     break;
                 case "minus":
-                    CallApp.Minus();
+                    CallBasicApp.Minus();
                     break;
                 case "divide":
-                    CallApp.Divide();
+                    CallBasicApp.Divide();
+                    break;
+                case "random":
+                    CallBasicApp.RandomApp();
                     break;
                 default:
                     Console.WriteLine("Unknow command. Try 'help' to see command can use");

@@ -9,7 +9,7 @@ namespace JetOS
      /// <summary>
      /// 
      /// </summary>
-    class App
+    class BasicApp
     {
         /// <summary>
         /// 
@@ -71,6 +71,12 @@ namespace JetOS
             c = a / b;
             Console.WriteLine("Output: {0}", c.ToString());
 
+        }
+
+        public void RandomApp()
+        {
+            Random ran = new Random();
+            Console.WriteLine("Output: {0}", ran.ToString());
         }
     }
 }
