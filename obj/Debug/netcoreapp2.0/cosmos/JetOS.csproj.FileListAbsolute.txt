@@ -1,0 +1,9 @@
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.csprojAssemblyReference.cache
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.AssemblyInfoInputs.cache
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.AssemblyInfo.cs
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.csproj.CoreCompileInputs.cache
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.deps.json
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.dll
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.pdb
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.dll
+C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.pdb
