@@ -26,6 +26,7 @@ namespace JetOS
             // Call App Class
             App CallApp = new App();
             // Connect to system cmd
+            
             SystemCmd CMD = new SystemCmd();
             switch (input)
             {
@@ -43,7 +44,7 @@ namespace JetOS
                     CallApp.Plus();
                     break;
                 default:
-                        Console.WriteLine("Unknow command. Try 'help' to see command can use");
+                    Console.WriteLine("Unknow command. Try 'help' to see command can use");
                     break;
             }    
         }
