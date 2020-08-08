@@ -43,6 +43,15 @@ namespace JetOS
                 case "plus":
                     CallApp.Plus();
                     break;
+                case "multiply":
+                    CallApp.Multiply();
+                    break;
+                case "minus":
+                    CallApp.Minus();
+                    break;
+                case "divide":
+                    CallApp.Divide();
+                    break;
                 default:
                     Console.WriteLine("Unknow command. Try 'help' to see command can use");
                     break;
