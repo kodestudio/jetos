@@ -18,39 +18,25 @@ namespace JetOS
             Console.WriteLine(@"  \____/ \___|\__|\____/|_____/ ");
         }
 
-        protected void Help()
-        {
-            Console.WriteLine("Welcome to JetOS kernel");
-            Console.WriteLine("Try input command to use");
-            Console.WriteLine("     help: show command can use");
-            Console.WriteLine("     clear: clear screen");
-            Console.WriteLine("     exit: exit JetOS");
-            Console.WriteLine("     plus: use plus program");
-            Console.WriteLine("     reboot: restart JetOS");
-            Console.WriteLine("Powered by Kode Open. Visit: https://https://kodelang.dev/jetos to see project page");
-        }
-
-        protected void Clear()
-        {
-            Console.Clear();
-        }
-
+   
         protected override void Run()
         {
             Console.Write("JetOS>");
             var input = Console.ReadLine();
             // Call App Class
             App CallApp = new App();
+            // Connect to system cmd
+            SystemCmd CMD = new SystemCmd();
             switch (input)
             {
                 case "help":
-                    Help();
+                    CMD.Help();
                     break;
                 case "clear":
-                    Clear();
+                    CMD.Clear();
                     break;
                 case "reboot":
-                    Clear();
+                    CMD.Clear();
                     BeforeRun();
                     break;
                 case "plus":
