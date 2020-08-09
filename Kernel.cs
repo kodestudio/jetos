@@ -26,8 +26,8 @@ namespace JetOS
             // Call App Class
             BasicApp CallBasicApp = new BasicApp();
             // Connect to system cmd
-            
             SystemCmd CMD = new SystemCmd();
+            TextFile textfile = new TextFile();
             switch (input)
             {
                 case "help":
@@ -54,6 +54,12 @@ namespace JetOS
                     break;
                 case "random":
                     CallBasicApp.RandomApp();
+                    break;
+                case "write":
+                    textfile.Write();
+                    break;
+                case "read":
+                    textfile.Read();
                     break;
                 default:
                     Console.WriteLine("Unknow command. Try 'help' to see command can use");
