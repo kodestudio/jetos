@@ -1,50 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.IO;
+using Sys = Cosmos.System;
 namespace JetOS
 {
     class TextFile
     {
+        public void CreateFile()
+        {
+            Console.Write("File Directory: ");
+            var usersFile = Console.ReadLine();
+            if (File.Exists(usersFile))
+            {
+                Console.WriteLine("File found at {0}", usersFile);
+            }
+            else
+            {
+                File.Create(usersFile);
+                Console.WriteLine("File created");
+            }
+        }
+
         public void Write()
         {
-            //string fileLPath = @"file1.txt";
-            string fileSPath = @"file.txt";
+            Console.Write("File directory: ");
+            var FilePath = Console.ReadLine();
+            if (!File.Exists(FilePath))
+            {
+                Console.WriteLine("File not found. Try 'create' to create this file");
 
-            //string[] lines = new string[2];
-            //lines[0] = "Write data to file using C#.";
-            //lines[1] = ":)";
-
-            //System.IO.File.WriteAllLines(fileLPath, lines);
-
-            string str;
-            str = "Write data to file using C#.\r\n:D";
-
-            System.IO.File.WriteAllText(fileSPath, str);
+            }                
+            else
+            {
+                Console.WriteLine("Input content of file {0}", FilePath);
+                Console.WriteLine("====================================================");
+                string contentFile = Console.ReadLine();
+                File.WriteAllText(FilePath, contentFile);
+                Console.WriteLine("====================================================");
+                Console.WriteLine("Write file complete");
+            }                
         }
 
         public void Read()
         {
-            string filePath = @"file.txt";
-            
-            string[] lines;
-            string str;
-
-            if (System.IO.File.Exists(filePath))
+            Console.Write("File directory: ");
+            var FilePath = Console.ReadLine();
+            if (!File.Exists(FilePath))
             {
-                lines = System.IO.File.ReadAllLines(filePath);
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    Console.WriteLine("Line { 0}: { 1} ",i , lines[i]);
-                }
-            Console.WriteLine();
+                Console.WriteLine("File not found. Try 'create' to create this file");
 
-                str = System.IO.File.ReadAllText(filePath);
-                Console.WriteLine("String: {0}", str);
             }
             else
             {
-                Console.WriteLine("File does not exist");
+                string fileContent;
+                fileContent = File.ReadAllText(FilePath);
+                Console.WriteLine("Content of {0}", FilePath);
+                Console.WriteLine("====================================================");
+                Console.WriteLine(fileContent);
+                Console.WriteLine("====================================================");
             }
         }
     }

@@ -9,6 +9,9 @@ namespace JetOS
     {
         protected override void BeforeRun()
         {
+            // init file system
+            SystemProcess systemprocess = new SystemProcess();
+            systemprocess.InitFileSystem();
             Console.WriteLine("JetOS booted successfully.");
             Console.WriteLine(@"       _      _    ____   _____ ");
             Console.WriteLine(@"      | |    | |  / __ \ / ____|");
@@ -55,11 +58,14 @@ namespace JetOS
                 case "random":
                     CallBasicApp.RandomApp();
                     break;
-                case "write":
-                    textfile.Write();
+                case "create":
+                    textfile.CreateFile();
                     break;
                 case "read":
                     textfile.Read();
+                    break;
+                case "write":
+                    textfile.Write();
                     break;
                 default:
                     Console.WriteLine("Unknow command. Try 'help' to see command can use");
