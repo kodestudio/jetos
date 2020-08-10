@@ -139,7 +139,7 @@ namespace JetOS
                                 Console.Write(">> ");
                                 int dec;
                                 string input = Console.ReadLine();
-                                if (int.TryParse(num, out dec) == true) {
+                                if (int.TryParse(input, out dec) == true) {
                                     if (dec >= 0) {
                                         string result = DecimalConvertTo(mode, dec);
                                         Console.WriteLine("Output result: " + result);
