@@ -21,7 +21,7 @@ namespace JetOS
             Console.WriteLine(@"  \____/ \___|\__|\____/|_____/ ");
         }
 
-   
+
         protected override void Run()
         {
             Console.Write("JetOS>");
@@ -58,6 +58,9 @@ namespace JetOS
                 case "random":
                     CallBasicApp.RandomApp();
                     break;
+                case "decconvert":
+                    CallBasicApp.DecimalConverter();
+                    break;
                 case "create":
                     textfile.CreateFile();
                     break;
@@ -70,7 +73,7 @@ namespace JetOS
                 default:
                     Console.WriteLine("Unknow command. Try 'help' to see command can use");
                     break;
-            }    
+            }
         }
     }
 }
