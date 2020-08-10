@@ -10,16 +10,17 @@ namespace JetOS
         {
             Console.WriteLine("Welcome to JetOS kernel");
             Console.WriteLine("Try input command to use");
-            Console.WriteLine("     help: show command can use");
-            Console.WriteLine("     clear: clear screen");
-            Console.WriteLine("     exit: exit JetOS");
-            Console.WriteLine("     plus: use plus program");
-            Console.WriteLine("     minus: minus two numbers");
-            Console.WriteLine("     multiply: multiply two numbers");
-            Console.WriteLine("     divide: devide two number");
-            Console.WriteLine("     reboot: restart JetOS");
-            Console.WriteLine("     random: show random number");
-            Console.WriteLine("Powered by Kode Open. Visit: https://https://kodelang.dev/jetos to see project page");
+            Console.WriteLine("     help: Shows commands that you can use to interact with.");
+            Console.WriteLine("     clear: Clear the screen");
+            Console.WriteLine("     exit: Exits JetOS");
+            Console.WriteLine("     plus: Adding two numbers.");
+            Console.WriteLine("     minus: Subtracting two numbers.");
+            Console.WriteLine("     multiply: Multiplying two numbers.");
+            Console.WriteLine("     divide: Dividing two numbers.");
+            Console.WriteLine("     decconvert: Converting a decimal to other number bases.");
+            Console.WriteLine("     reboot: Restarts JetOS");
+            Console.WriteLine("     random: Shows random number");
+            Console.WriteLine("Powered by Kode Open. Visit: https://https://kodelang.dev/jetos to see the project page.");
         }
 
         public void Clear()
