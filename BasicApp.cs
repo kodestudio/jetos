@@ -81,34 +81,81 @@ namespace JetOS
 
         string DecimalConvertTo(string mode, int value)
         {
+            // Since COSMOS needed plugs for native functions, Convert.ToString(Int, Int32) is unusable
+            
             string result = "";
             switch (mode)
             {
                 case "binary":
-                    result = Convert.ToString(value, 2);
+                    switch(value)
+                    {
+                        case 0:
+                            result = "0";
+                            break;
+                        case 1:
+                            result = "1";
+                            break;
+                        default:
+                            while (value >= 2)
+                            {
+                                if (value % 2 == 1)
+                                {
+                                    result += "1";
+                                    value = (value - (value % 2)) / 2;
+                                } else
+                                {
+                                    result += "0";
+                                    value = value / 2;
+                                }
+                                
+                            }
+                            result += "1";
+                            char[] charArray = result.ToCharArray();
+                            Array.Reverse(charArray);
+                            result = new string(charArray);
+                            break;
+                    }
                     break;
                 case "octal":
-                    result = Convert.ToString(value, 8);
+                    if (value < 8)
+                    {
+                        result = value.ToString();
+                    } else
+                    {
+                        int val = 0;
+                        while (value >= 8)
+                        {
+                            double logbase = Math.Floor(Math.Log(value, 8));
+                            int times = Convert.ToInt32(Math.Floor(value / Math.Pow(8, logbase)));
+                            value = Convert.ToInt32(value - times*Math.Pow(8, logbase));
+                            val += Convert.ToInt32(times*Math.Pow(10, logbase));
+                        }
+                        val += value;
+                        result = val.ToString();
+                    }
+                    
                     break;
                 case "hexadecimal":
-                    result = "0x" + Convert.ToString(value, 16).ToUpper();
+                    result = "0x" + value.ToString("X");
                     break;
-            }
+            } 
             return result;
         }
 
         public void DecimalConverter()
         {
-            try
-            {
+           // try
+           // {
                 bool ProcessEnded = false;
                 Console.WriteLine("Welcome to DECIMAL TO OTHERS CONVERTER for JetOS");
 
                 while (ProcessEnded == false)
                 {
                     Console.WriteLine("Which type of number do you want to convert into?");
-                    Console.WriteLine("\t0. Binary\n\t1. Octal\n\t2. Hexadecimal\n\n\n3. Exit Program");
+                    Console.WriteLine("\t0. Binary\n\t1. Octal\n\t2. Hexadecimal\n\n\n\t3. Exit Program");
                     Console.Write("> ");
+
+                
                     string num = Console.ReadLine();
                     int command;
                     if (int.TryParse(num, out command) == false)
@@ -117,8 +164,9 @@ namespace JetOS
                     }
                     else
                     {
+                        
+                        string mode = "";
 
-                        string mode = null;
                         switch (command)
                         {
                             case 0:
@@ -139,17 +187,23 @@ namespace JetOS
                                 break;
 
                         }
+                    
 
-                        if (mode != null)
+                        if (mode != "")
                         {
                             bool convertFinished = false;
+                            
                             while (convertFinished == false)
                             {
                                 Console.WriteLine("Please type your number (must be not less than 0)");
                                 Console.Write(">> ");
+
+                                
+
+                                
                                 int dec;
-                                string input = Console.ReadLine();
-                                if (int.TryParse(input, out dec) == true)
+                                string number = Console.ReadLine();
+                                if (int.TryParse(number, out dec) == true)
                                 {
                                     if (dec >= 0)
                                     {
@@ -175,17 +229,23 @@ namespace JetOS
                                 {
                                     convertFinished = true;
                                 }
+
+                                
                             }
+                            
 
                         }
 
+                        
                     }
+
                 }
-            }
-            catch (InvalidCastException e)
-            {
-                Console.WriteLine(e);
-            }
+            
+            //}
+            //catch (InvalidCastException e)
+            //{
+            //    Console.WriteLine(e);
+            //}
 
 
 
