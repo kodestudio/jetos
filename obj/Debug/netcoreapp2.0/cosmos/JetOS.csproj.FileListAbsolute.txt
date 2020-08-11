@@ -7,3 +7,12 @@ C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\bin\Debug\netcor
 C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.pdb
 C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.dll
 C:\Users\quoct\Documents\Visual Studio 2019\Project\JetOS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.pdb
+E:\PROJECTS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.deps.json
+E:\PROJECTS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.dll
+E:\PROJECTS\JetOS\bin\Debug\netcoreapp2.0\cosmos\JetOS.pdb
+E:\PROJECTS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.csprojAssemblyReference.cache
+E:\PROJECTS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.AssemblyInfoInputs.cache
+E:\PROJECTS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.AssemblyInfo.cs
+E:\PROJECTS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.csproj.CoreCompileInputs.cache
+E:\PROJECTS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.dll
+E:\PROJECTS\JetOS\obj\Debug\netcoreapp2.0\cosmos\JetOS.pdb
