@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Sys = Cosmos.System;
 
@@ -25,13 +26,24 @@ namespace JetOS
         protected override void Run()
         {
             Console.Write("JetOS>");
+            string func = "";
             var input = Console.ReadLine();
             // Call App Class
             BasicApp CallBasicApp = new BasicApp();
             // Connect to system cmd
             SystemCmd CMD = new SystemCmd();
+            SystemUtils Utilities = new SystemUtils();
             TextFile textfile = new TextFile();
-            switch (input)
+
+            if (input.Split().Length > 1)
+            {
+                func = input.Split()[0];
+            } else
+            {
+                func = input;
+            }
+            
+            switch (func)
             {
                 case "help":
                     CMD.Help();
@@ -40,8 +52,10 @@ namespace JetOS
                     CMD.Clear();
                     break;
                 case "reboot":
-                    CMD.Clear();
-                    BeforeRun();
+                    CMD.Reboot();
+                    break;
+                case "shutdown":
+                    CMD.Shutdown();
                     break;
                 case "plus":
                     CallBasicApp.Plus();
@@ -69,6 +83,37 @@ namespace JetOS
                     break;
                 case "write":
                     textfile.Write();
+                    break;
+                case "dir":
+                    Utilities.InspectDirectory();
+                    break;
+                case "mkdir":
+                    Utilities.CreateDirectory();
+                    break;
+                case "cd":
+                    Utilities.GoToDirectory();
+                    break;
+                case "rnm":
+                    Utilities.RenameDirectory();
+                    break;
+                case "say":
+                    int i = 0; string speech = "";
+                    if (input.Split().Length > 1)
+                    {
+                        for (i = 1; i < input.Split().Length; i++)
+                        {
+                            speech += input.Split()[i];
+                            if (i < input.Split().Length - 1)
+                            {
+                                speech += " ";
+                            }
+
+                        }
+                        Utilities.Say(string.Join(" ", speech));
+                    } else
+                    {
+                        Utilities.Say("Can't hear you...");
+                    } 
                     break;
                 default:
                     Console.WriteLine("Unknow command. Try 'help' to see command can use");
