@@ -35,8 +35,15 @@ namespace JetOS
             {
                 Console.WriteLine("Input content of file {0}", FilePath);
                 Console.WriteLine("====================================================");
-                string contentFile = Console.ReadLine();
-                File.WriteAllText(FilePath, contentFile);
+                string contentFile;
+                string fullText = "";
+                Console.Write("> ");
+                while (!string.IsNullOrWhiteSpace(contentFile=Console.ReadLine()))
+                {
+                    Console.Write("> ");
+                    fullText += contentFile + "\n";
+                }
+                File.WriteAllText(FilePath, fullText);
                 Console.WriteLine("====================================================");
                 Console.WriteLine("Write file complete");
             }                
