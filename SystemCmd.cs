@@ -15,6 +15,7 @@ namespace JetOS
             Console.WriteLine("     clear: Clear the screen");
             Console.WriteLine("     dir: Show current directory");
             Console.WriteLine("     mkdir: Create directory");
+            Console.WriteLine("     rmvdir: Delete directory");
             Console.WriteLine("     tree: View the directory's file tree");
             Console.WriteLine("     rnm: Rename a directory");
             Console.WriteLine("     shutdown: Shutdown JetOS");
