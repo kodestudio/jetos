@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using Sys = Cosmos.System;
 
 namespace JetOS
@@ -14,6 +15,7 @@ namespace JetOS
             SystemProcess systemprocess = new SystemProcess();
             systemprocess.InitFileSystem();
             Console.WriteLine("JetOS booted successfully.");
+            Console.Clear();
             Console.WriteLine(@"       _      _    ____   _____ ");
             Console.WriteLine(@"      | |    | |  / __ \ / ____|");
             Console.WriteLine(@"      | | ___| |_| |  | | (___  ");
@@ -25,7 +27,9 @@ namespace JetOS
 
         protected override void Run()
         {
-            Console.Write("JetOS>");
+            string currentDir = Directory.GetCurrentDirectory();
+            Console.Write("JetOS=>{0}>",currentDir);
+            string dir = "";
             string func = "";
             var input = Console.ReadLine();
             // Call App Class
@@ -88,13 +92,22 @@ namespace JetOS
                     Utilities.InspectDirectory();
                     break;
                 case "mkdir":
-                    Utilities.CreateDirectory();
+                    dir = input.Split(" ", 2)[1];
+                    Utilities.CreateDirectory(dir);
+                    break;
+                case "rmvdir":
+                    dir = input.Split(" ", 2)[1];
+                    Utilities.RemoveDirectory(dir);
                     break;
                 case "cd":
-                    Utilities.GoToDirectory();
+                    dir = input.Split(" ", 2)[1];
+                    Utilities.GoToDirectory(dir);
                     break;
                 case "rnm":
                     Utilities.RenameDirectory();
+                    break;
+                case "tree":
+                    Utilities.ViewDirectoryTree();
                     break;
                 case "say":
                     int i = 0; string speech = "";

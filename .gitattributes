@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.iso filter=lfs diff=lfs merge=lfs -text
+*.cdb filter=lfs diff=lfs merge=lfs -text
