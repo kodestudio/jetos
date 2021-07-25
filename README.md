@@ -2,7 +2,7 @@
 ## What is Jet OS?
 * Jet OS is a completely new operating system, developed by **Kode Organization**. 
 * For **research** purposes only. 
-* Note: Jet OS is not Linux, Unix,... It use a completely new kernel. 
+* Note: Jet OS is not Linux, Unix,... It uses a completely **new kernel**. 
 * **Jet OS is made with [Cosmos](https://github.com/cosmosOS/cosmos).**
 
 ## Contribute to Jet OS
